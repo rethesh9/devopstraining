@@ -12,7 +12,7 @@ on:
 
 jobs:
   test-job:
-    run-on: ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
     - name: my first steps
       run: |
