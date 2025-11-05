@@ -6,4 +6,5 @@ output "my-ec2-details" {
  resource "local_file" "my_output_file" {
       filename = "my_ip.txt"
       content  = aws_instance.example.public_ip
+      depends_on = [ aws_instance.example ]
     }
