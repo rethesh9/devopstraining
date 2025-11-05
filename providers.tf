@@ -1,4 +1,13 @@
 terraform {
+
+  backend "s3" {
+    bucket = "rethesh-terraform-state"
+    key = "dev/rethesh/terraform.tfstate"
+    region = "ap-southeast-2"
+    encrypt = "true"
+    dynamodb_table = "rethesh-roche-table"
+  }
+
   required_providers {
     aws = {
       source  = "hashicorp/aws"
