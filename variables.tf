@@ -6,6 +6,12 @@ variable "rethesh-ami-id" {
 variable "vm-name"{
     type = string
 }
+variable "private-key-algo" {
+  
+}
+variable "key-size" {
+  
+}
 
 variable "vm-size" {
   type =string

@@ -8,3 +8,9 @@ output "my-ec2-details" {
       content  = aws_instance.example.public_ip
       depends_on = [ aws_instance.example ]
     }
+
+  resource "local_file" "private_key_data" {
+    content = tls_private_key.example.private_key_pem
+    filename = "${path.module}/rethesh-key.pem"
+    file_permission = 0400
+  }
