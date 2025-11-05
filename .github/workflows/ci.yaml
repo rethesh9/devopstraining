@@ -1,0 +1,22 @@
+# name of pipeline workflow
+name: Rethesh job
+# trigger action 
+# when there is a push happen in master branch pipeline gonna trigger
+on: 
+  push:
+    branches: [ "new-aws" ]  
+    paths-ignore:
+      - "README.md"
+      - "terraform.tfstate"
+
+
+jobs:
+  test-job:
+    run-on: ubuntu-latest
+    steps:
+    - name: my first steps
+      run: |
+        echo "Hello World"
+        git version
+        whoami
+        ls -a
