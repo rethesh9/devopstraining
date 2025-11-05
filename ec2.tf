@@ -6,5 +6,14 @@ resource "aws_instance" "example" {
   tags = {
     "Name" = var.vm-name
   }
+  provisioner "remote-exec" {
+    
+  }
+  connection {
+    type = "ssh"
+    user = "ec2-user"
+    host = self.public_ip
+    private_key = aws_key_pair.example
+  }
 }
 
