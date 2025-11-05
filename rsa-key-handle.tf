@@ -1,4 +1,4 @@
-resource "tls_private_key" "example"{
+git checkresource "tls_private_key" "example"{
     algorithm = var.private-key-algo
     rsa_bits = var.key-size
 }
