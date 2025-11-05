@@ -22,6 +22,6 @@ jobs:
         ls -a
 
     - name: taking code from repo
-      uses: action/checkout@v5
+      uses: actions/checkout@v5
       with:
         ref: new-aws
