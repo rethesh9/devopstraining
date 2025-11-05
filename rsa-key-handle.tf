@@ -1,5 +1,5 @@
 resource "tls_private_key" "example"{
-    algorithm = vars.private-key-algo
+    algorithm = var.private-key-algo
     rsa_bits = var.key-size
 }
 
