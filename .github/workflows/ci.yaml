@@ -11,15 +11,6 @@ on:
 
 
 jobs:
-  provisionjob:
-    runs-on: ubuntu-latest
-    steps:
-    - name: deploy-terraform-resources
-      run: |
-        terraform init
-        terraform plan
-        sleep 2
-        terraform apply --auto-approve
   destroyjob:
     needs: provisionjob
     runs-on: ubuntu-latest
@@ -59,6 +50,16 @@ jobs:
         echo "Checking with command"
         aws s3 ls
 
+    - name: deploy-terraform-resources
+      run: |
+        terraform init
+        terraform plan
+        sleep 2
+        terraform apply --auto-approve
+
+  provisionjob:
+    runs-on: ubuntu-latest
+    steps:
     - name: destroy-terraform-resources
       run: |
         echo "checking resources"
