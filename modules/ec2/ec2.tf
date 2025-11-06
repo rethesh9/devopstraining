@@ -4,9 +4,10 @@ resource "aws_instance" "example" {
   instance_type = var.vm-size
   key_name      = aws_key_pair.example.key_name
   #security_groups = [aws_security_group.allow_tls.name]
-  vpc_security_group_ids = [aws_security_group.allow_tls.id]
+  vpc_security_group_ids = [aws_security_group.allow_tls_new.id]
+  count = var.novm
   tags = {
-    "Name" = var.vm-name
+    "Name" = "${var.vm-name}-${count.index}"
   }
   provisioner "remote-exec" {
     inline = [

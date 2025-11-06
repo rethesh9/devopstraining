@@ -25,3 +25,7 @@ variable "my_vpc_id" {}
 variable "security-grp-nm" {
   
 }
+
+variable "novm" {
+  
+}
