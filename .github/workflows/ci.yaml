@@ -21,7 +21,7 @@ jobs:
         sleep 2
         terraform apply --auto-approve
   destroyjob:
-    depends_on: provisionjob
+    needs: provisionjob
     runs-on: ubuntu-latest
     steps:
     - name: my first steps
