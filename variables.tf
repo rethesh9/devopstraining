@@ -20,3 +20,8 @@ variable "vm-size" {
 variable "key_name" {
   type = string
 }
+
+variable "my_vpc_id" {}
+variable "security-grp-nm" {
+  
+}
