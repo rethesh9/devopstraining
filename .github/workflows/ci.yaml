@@ -11,8 +11,7 @@ on:
 
 
 jobs:
-  destroyjob:
-    needs: provisionjob
+  provisionjob:
     runs-on: ubuntu-latest
     steps:
     - name: my first steps
@@ -57,7 +56,8 @@ jobs:
         sleep 2
         terraform apply --auto-approve
 
-  provisionjob:
+  destroyjob:
+    needs: provisionjob
     runs-on: ubuntu-latest
     steps:
     - name: destroy-terraform-resources
